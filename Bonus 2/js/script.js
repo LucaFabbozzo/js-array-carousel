@@ -10,33 +10,46 @@ const images = [
 ];
 
 let imagesTags = '';
+let thumbTags = '';
 let counterImages = 0;
 
 const slider = document.querySelector('.items-wrapper');
 const sliderThumb = document.querySelector('.items-wrap-small');
-const items = document.getElementsByClassName('item');
+
 const next = document.querySelector('.top');
 const prev = document.querySelector('.bottom');
 
+const nextThumb = document.querySelector('.small-top');
+const prevThumb = document.querySelector('.small-bottom');
 
 
 for(let i = 0; i < images.length; i++) { 
   imagesTags += `
     <img class="item" src="./img/${images[i]}" alt="${images[i]}">
   `;
+
+  thumbTags += `
+    <div class="card">
+      <img class="small" src="./img/${images[i]}" alt="${images[i]}">
+    </div>
+  `;
  
 }
 
 slider.innerHTML += imagesTags;
-sliderThumb.innerHTML += imagesTags;
+sliderThumb.innerHTML +=thumbTags;
 
-
+const items = document.getElementsByClassName('item');
+const thumbs = document.getElementsByClassName('small');
 
 
 items[counterImages].classList.add('active');
+thumbs[counterImages].classList.add('active');
+
+
 
 next.addEventListener('click', function() {
- 
+
   items[counterImages].classList.remove('active');
 
   items[++counterImages].classList.add('active');
@@ -61,5 +74,22 @@ prev.addEventListener('click', function() {
   } 
   
 })
+
+
+
+
+nextThumb.addEventListener('click', function() {
+  thumbs[counterImages].classList.remove('active');
+
+  thumbs[++counterImages].classList.add('active');
+
+});
+
+prevThumb.addEventListener('click', function() {
+  thumbs[counterImages].classList.remove('active');
+
+  thumbs[--counterImages].classList.add('active');
+})
+
 
 

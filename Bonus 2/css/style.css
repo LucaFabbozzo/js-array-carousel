@@ -9,6 +9,28 @@ body {
   background-color: #f7f5f5;
 }
 
+.btn-arrow {
+  position: absolute;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(164, 163, 163);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+}
+
+.btn-arrow.top {
+  top: 10px;
+}
+
+.btn-arrow.bottom {
+  bottom: 10px;
+}
+
+
 
 .main-wrapper {
   display: flex;
@@ -78,18 +100,19 @@ body {
   position: relative;
 }
 
-
 .thumbnails .card {
   width: 220px;
-  height: 70px;
+  height: 70px; 
+  
 }
 
 .items-wrap-small .card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.5;
 }
 
-.thumbnails .card .active img {
+.thumbnails .card img.active {
   opacity: 1;
 }
