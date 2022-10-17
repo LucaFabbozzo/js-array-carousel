@@ -34,19 +34,34 @@ for(let i = 0; i < images.length; i++) {
 
 slider.innerHTML += imagesTags;
 
-//prendo il primo elemento della collection e gli aggiungo la classe active
+
 items[counterImages].classList.add('active');
 
 next.addEventListener('click', function() {
-  //rimuovo la classe active dall'elemento attivo
+ 
   items[counterImages].classList.remove('active');
-  //incremento il contatore e al nuovo indice aggiungo active
+
   items[++counterImages].classList.add('active');
+
+  prev.classList.remove('hide');
+  if(counterImages === images.length - 1) {
+    next.classList.add('hide');
+  }
+
+
 });
 
 prev.addEventListener('click', function() {
-  //rimuovo la classe active dall'elemento attivo
+
   items[counterImages].classList.remove('active');
-  //incremento il contatore e al nuovo indice aggiungo active
+  
   items[--counterImages].classList.add('active');
+
+  next.classList.remove('hide');
+  if(counterImages === 0) {
+    prev.classList.add('hide');
+  } 
+  
 })
+
+
