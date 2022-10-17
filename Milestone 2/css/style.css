@@ -55,3 +55,11 @@ body {
 .btn-arrow.top {
   bottom: 10px;
 }
+
+.item {
+  display: none;
+}
+
+.active {
+  display: block;
+}
