@@ -20,6 +20,7 @@ body {
   border-radius: 50%;
   text-align: center;
   line-height: 30px;
+  z-index: 999;
 }
 
 .btn-arrow.top {
@@ -96,23 +97,23 @@ body {
 }
 
 /* thumbnails */
+.items-wrap-small {
+  display: flex;
+  flex-direction: column;
+}
+
 .thumbnails {
   position: relative;
 }
 
-.thumbnails .card {
+.thumbnails img {
   width: 220px;
   height: 70px; 
-  
-}
-
-.items-wrap-small .card img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
-.thumbnails .card img.active {
+
+.thumbnails img.active {
   opacity: 1;
 }

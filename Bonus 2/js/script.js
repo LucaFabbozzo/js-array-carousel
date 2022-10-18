@@ -29,9 +29,7 @@ for(let i = 0; i < images.length; i++) {
   `;
 
   thumbTags += `
-    <div class="card">
       <img class="small" src="./img/${images[i]}" alt="${images[i]}">
-    </div>
   `;
  
 }
@@ -45,7 +43,6 @@ const thumbs = document.getElementsByClassName('small');
 
 items[counterImages].classList.add('active');
 thumbs[counterImages].classList.add('active');
-
 
 
 next.addEventListener('click', function() {
@@ -79,16 +76,29 @@ prev.addEventListener('click', function() {
 
 
 nextThumb.addEventListener('click', function() {
+
   thumbs[counterImages].classList.remove('active');
 
   thumbs[++counterImages].classList.add('active');
 
+  prevThumb.classList.remove('hide');
+  if(counterImages === images.length - 1) {
+    nextThumb.classList.add('hide');
+  }
+
 });
 
 prevThumb.addEventListener('click', function() {
+
+
   thumbs[counterImages].classList.remove('active');
 
   thumbs[--counterImages].classList.add('active');
+
+  nextThumb.classList.remove('hide');
+  if(counterImages === 0) {
+    prevThumb.classList.add('hide');
+  } 
 })
 
 
