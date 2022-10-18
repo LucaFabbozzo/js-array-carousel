@@ -51,6 +51,8 @@ next.addEventListener('click', function() {
 
   items[++counterImages].classList.add('active');
 
+  // if(counterImages === images) counterImages = 0;
+
   prev.classList.remove('hide');
   if(counterImages === images.length - 1) {
     next.classList.add('hide');
@@ -64,6 +66,8 @@ prev.addEventListener('click', function() {
   items[counterImages].classList.remove('active');
   
   items[--counterImages].classList.add('active');
+
+  // if(counterImages < 0 ) counterImages = images - 1;
 
   next.classList.remove('hide');
   if(counterImages === 0) {
