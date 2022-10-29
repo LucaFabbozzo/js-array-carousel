@@ -41,25 +41,27 @@ thumbs[counterImages].classList.add('active');
 
 
 next.addEventListener('click', function() {
-
-  items[counterImages].classList.remove('active');
-  thumbs[counterImages].classList.remove('active');
-  counterImages--
-  if(counterImages < 0 ) counterImages = images.length - 1;
-  items[counterImages].classList.add('active');
-  thumbs[counterImages].classList.add('active');
+  nextPrev(true);
 })
 
 prev.addEventListener('click', function() {
-
-  items[counterImages].classList.remove('active');
-  thumbs[counterImages].classList.remove('active');
-  counterImages++
-  if(counterImages === images.length) counterImages = 0;
-  items[counterImages].classList.add('active');
-  thumbs[counterImages].classList.add('active');
+  nextPrev(false);
 });
 
+
+function nextPrev(isNext) {
+  items[counterImages].classList.remove('active');
+  thumbs[counterImages].classList.remove('active');
+  if(isNext){
+    counterImages--
+    if(counterImages < 0 ) counterImages = images.length - 1;
+  } else { 
+     counterImages++
+    if(counterImages === images.length) counterImages = 0;
+  }
+  items[counterImages].classList.add('active');
+  thumbs[counterImages].classList.add('active');
+}
 
 
 
